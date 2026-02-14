@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="sk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Will you be my Valentine?</title>
+  <title>Budeš moja valentínka?</title>
   <style>
     :root{
       --bg1:#ffd6e5;
@@ -23,7 +23,6 @@
       position:relative;
     }
 
-    /* floating hearts background */
     .hearts{
       position:fixed; inset:0; pointer-events:none; overflow:hidden;
       opacity:.22;
@@ -61,7 +60,6 @@
       border: 1px solid rgba(255,255,255,.6);
     }
 
-    /* new top badge (heart + sparkle) */
     .badge{
       width:92px; height:92px;
       margin:0 auto 10px;
@@ -155,7 +153,6 @@
 </head>
 <body>
 
-  <!-- floating hearts -->
   <div class="hearts" aria-hidden="true" id="hearts"></div>
 
   <div class="card" id="card">
@@ -165,15 +162,15 @@
         <div class="sparkle">✨</div>
       </div>
 
-      <h1><span id="name">YOUR_NAME</span>, will you be my valentine?</h1>
-      <div class="subtitle">Be honest. (But also… choose wisely 😈)</div>
+      <h1><span id="name">YOUR_NAME</span>, budeš moja valentínka?</h1>
+      <div class="subtitle">Buď úprimná. (Ale tiež… vyber si múdro 😈)</div>
 
       <div class="btnRow" id="btnRow">
-        <button id="yesBtn">Yes</button>
-        <button id="noBtn">No</button>
+        <button id="yesBtn">Áno</button>
+        <button id="noBtn">Nie</button>
       </div>
 
-      <div class="fineprint" id="fineprint">“No” seems a bit shy 😇</div>
+      <div class="fineprint">„Nie“ pôsobí trochu hanblivo 😇</div>
     </div>
 
     <div id="screenYay" class="hidden">
@@ -182,20 +179,18 @@
         <div class="sparkle">💖</div>
       </div>
 
-      <h1><span id="name2">YOUR_NAME</span>, will you be my valentine?</h1>
-      <div class="yay">YAY! 🎉</div>
+      <h1><span id="name2">YOUR_NAME</span>, budeš moja valentínka?</h1>
+      <div class="yay">JÉÉÉ! 🎉</div>
 
       <div class="media">
-        <!-- Put your attached image in the same folder as this HTML and rename it to yay.png -->
-        <img id="yayImg" alt="Yay!" src="yay.png">
+        <img id="yayImg" alt="Jéé!" src="yay.png">
       </div>
     </div>
   </div>
 
   <script>
-    // ✅ Customize these:
-    const PERSON_NAME = "Simca";     // <-- changed
-    const YAY_IMAGE_OR_GIF = "yay.png"; // <-- your attached image (rename to yay.png)
+    const PERSON_NAME = "Simca";
+    const YAY_IMAGE_OR_GIF = "yay.png";
 
     const nameEl = document.getElementById("name");
     const nameEl2 = document.getElementById("name2");
@@ -211,7 +206,6 @@
     nameEl2.textContent = PERSON_NAME;
     yayImg.src = YAY_IMAGE_OR_GIF;
 
-    // Place "No" initially
     function placeNoInitial(){
       const r = btnRow.getBoundingClientRect();
       noBtn.style.left = (r.width/2 + 70) + "px";
@@ -255,14 +249,13 @@
       screenYay.classList.remove("hidden");
     });
 
-    // Build floating hearts (graphics change)
     const hearts = document.getElementById("hearts");
     const COUNT = 18;
     for(let i=0;i<COUNT;i++){
       const s = document.createElement("span");
       const left = Math.random()*100;
-      const dur = 6 + Math.random()*10;     // 6–16s
-      const delay = Math.random()*-16;      // start already in motion
+      const dur = 6 + Math.random()*10;
+      const delay = Math.random()*-16;
       const scale = 0.6 + Math.random()*1.3;
 
       s.style.left = left + "vw";
@@ -276,3 +269,4 @@
   </script>
 </body>
 </html>
+
